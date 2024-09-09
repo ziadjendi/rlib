@@ -5,5 +5,5 @@ interface IBodyProps {
     isSelected: (cell: ICell) => boolean;
     selectCellHandler: (cell: ICell) => void;
 }
-declare function Body({ categories, cells, isSelected, selectCellHandler }: IBodyProps): import("react/jsx-runtime").JSX.Element;
+declare function Body({ categories, cells, isSelected, selectCellHandler }: IBodyProps): JSX.Element;
 export default Body;

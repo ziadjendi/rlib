@@ -7,5 +7,5 @@ interface IRubricPreviewProps {
     getScore?(score: number): void;
     isScored?(value: boolean): void;
 }
-declare const RubricPreview: ({ criteriaTitle, criteria, styles, getScore, isScored, }: IRubricPreviewProps) => import("react/jsx-runtime").JSX.Element;
+declare const RubricPreview: ({ criteriaTitle, criteria, styles, getScore, isScored, }: IRubricPreviewProps) => JSX.Element;
 export default RubricPreview;

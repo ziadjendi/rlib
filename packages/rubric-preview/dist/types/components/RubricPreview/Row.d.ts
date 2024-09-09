@@ -9,5 +9,5 @@ interface IRowProps {
     isSelected(cell: ICell): boolean;
     selectCellHandler: (cell: ICell) => void;
 }
-declare function Row({ data: { index, category, cells }, isSelected, selectCellHandler }: IRowProps): import("react/jsx-runtime").JSX.Element;
+declare function Row({ data: { index, category, cells }, isSelected, selectCellHandler }: IRowProps): JSX.Element;
 export default Row;
