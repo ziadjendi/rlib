@@ -4,7 +4,6 @@ import Header from "./Header";
 import Body from "./Body";
 import generateData, { ICell, ICriteria } from "./Helpers";
 import { CSSObject } from "../../utils/interfaces";
-import "https://fonts.googleapis.com/css2?family=Signika:wght@300..700";
 interface IRubricPreviewProps {
   criteria: ICriteria[];
   criteriaTitle: string; // Criteria Title a text appear on the top left corner
