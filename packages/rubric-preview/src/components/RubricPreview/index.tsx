@@ -4,7 +4,7 @@ import Header from "./Header";
 import Body from "./Body";
 import generateData, { ICell, ICriteria } from "./Helpers";
 import { CSSObject } from "../../utils/interfaces";
-
+import "https://fonts.googleapis.com/css2?family=Signika:wght@300..700";
 interface IRubricPreviewProps {
   criteria: ICriteria[];
   criteriaTitle: string; // Criteria Title a text appear on the top left corner
@@ -22,6 +22,10 @@ const customStyles = {
     height: "100%",
     width: "100%",
     gap: "10px",
+    "& *": {
+      boxSizing: "border-box",
+      fontFamily: "Signika, sans-serif",
+    },
   },
   table: {
     display: "flex",
@@ -63,19 +67,25 @@ const RubricPreview = ({
   const { achievements, categories, cells, maxScore } = generateData(criteria);
 
   const selectCellHandler = (cell: ICell) => {
-    const selectedRowsIndex = selectedCells.map(cell => cell.rowIndex);
-    const updatedSelectedCells = [...selectedCells].map(c =>
+    const selectedRowsIndex = selectedCells.map((cell) => cell.rowIndex);
+    const updatedSelectedCells = [...selectedCells].map((c) =>
       c.rowIndex === cell.rowIndex ? cell : c
     );
-    if (!selectedRowsIndex.includes(cell.rowIndex)) updatedSelectedCells.push(cell);
+    if (!selectedRowsIndex.includes(cell.rowIndex))
+      updatedSelectedCells.push(cell);
 
-    const updatedScore = updatedSelectedCells.reduce((acc, cell) => acc + cell.score, 0);
+    const updatedScore = updatedSelectedCells.reduce(
+      (acc, cell) => acc + cell.score,
+      0
+    );
     setScore(updatedScore);
     setSelectedCells(updatedSelectedCells);
   };
 
   const isSelected = (cell: ICell) => {
-    return selectedCells.find(c => c.rowIndex === cell.rowIndex && c.colIndex === cell.colIndex)
+    return selectedCells.find(
+      (c) => c.rowIndex === cell.rowIndex && c.colIndex === cell.colIndex
+    )
       ? true
       : false;
   };
