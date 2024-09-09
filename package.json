@@ -1,0 +1,15 @@
+{
+  "name": "rubric-elements",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.1.8"
+  }
+}
